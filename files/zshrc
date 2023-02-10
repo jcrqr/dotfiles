@@ -1,0 +1,45 @@
+export ZSH="$HOME/.oh-my-zsh"
+
+source $ZSH/oh-my-zsh.sh
+
+ZSH_THEME="minimal"
+COMPLETION_WAITING_DOTS="true"
+
+# Load shell aliases
+source ~/.config/zsh/alias.zsh
+
+# Load zsh options
+source ~/.config/zsh/setopt.zsh
+
+# Load env
+source ~/.config/zsh/env.zsh
+
+plugins=(zsh-autosuggestions)
+
+# Autoload functions
+autoload -U compinit && compinit
+autoload -U colors && colors
+
+# Set TTY for GPG for each instance
+export GPG_TTY=$(tty)
+
+# asdf
+. "$HOME/.asdf/asdf.sh"
+. "$HOME/.asdf/completions/asdf.bash"
+# asdf
+
+# pnpm
+export PNPM_HOME="${HOME}/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+# pip3
+export PATH="${HOME}/Library/Python/3.9/bin:$PATH"
+# pip3
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fzf
+
+# Prevent Ctr-S from locking up the terminal
+$exec stty -ixon
