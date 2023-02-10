@@ -1,4 +1,5 @@
 # Git
+alias ga="git add"
 alias gc="git commit"
 alias gco="git checkout"
 alias gp="git push"
@@ -19,3 +20,6 @@ alias tgp="terragrunt plan"
 # Podman
 alias docker=podman
 alias docker-compose=podman-compose
+
+# PNPM
+alias pn=pnpm
